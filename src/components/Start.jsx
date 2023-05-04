@@ -1,4 +1,3 @@
-/* eslint-disable prettier/prettier */
 import { gsap } from "gsap";
 import img5 from "./5.jpg";
 import img6 from "img/6.jpg";
@@ -7,14 +6,11 @@ import { useEffect } from "react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import Account from "components/Account/Account";
-import NativeBalance from "components/NativeBalance";
 import { Link } from "react-router-dom";
 
 import background from "img/background.jpg";
 import capsule from "img/capsule.png";
 import tree from "img/tree.png";
-import BurnCtr from "./BurnCtr";
 
 export default function Start() {
   // const { Moralis } = useMoralis();
@@ -34,7 +30,7 @@ export default function Start() {
     parallax
       .to(".background", {
         scale: 1,
-        x: "-20vw",
+        x: "-20vw"
       })
 
       .to(
@@ -42,18 +38,18 @@ export default function Start() {
         {
           x: "0vw",
           y: "-60vh",
-          scale: 1.5,
+          scale: 1.5
         },
-        "<",
+        "<"
       )
 
       .to(
         ".tree",
         {
           scale: 1,
-          y: 0,
+          y: 0
         },
-        "<",
+        "<"
       );
 
     ScrollTrigger.create({
@@ -62,11 +58,11 @@ export default function Start() {
       start: "top 0",
       end: "bottom 0%",
       scrub: 2,
-      pin: true,
+      pin: true
     });
 
     titleAnim.to(".titleanim", {
-      scale: 2,
+      scale: 2
     });
 
     ScrollTrigger.create({
@@ -74,8 +70,8 @@ export default function Start() {
       trigger: ".parallax",
       start: "top 0",
       end: "bottom 0%",
-      scrub: 2,
-      pin: true,
+      scrub: 2
+      // pin: true
     });
 
     //gsap 2nd part of the page  - effect
@@ -90,12 +86,12 @@ export default function Start() {
       trigger: ".hero",
       //start: 'bottom 0%',
       // end: 'bottom 0%',
-      scrub: true,
+      scrub: true
     });
 
     tl.from(".hero", {
       duration: 0.5,
-      filter: "blur(5px)",
+      filter: "blur(5px)"
     });
 
     // tl.from(".logo", {
@@ -120,11 +116,11 @@ export default function Start() {
 
     tl.from(".heroG .btn", {
       opacity: 0,
-      duration: 0.2,
+      duration: 0.2
     });
 
     tl.to(".loading", {
-      display: "none",
+      display: "none"
     });
 
     AOS.init();
@@ -177,9 +173,7 @@ export default function Start() {
               minted moebius collection NFT !
             </p>
             <a href="#">
-              <button className="btn">
-                <Account />
-              </button>
+              <button className="btn"></button>
             </a>
           </div>
         </div>
@@ -190,10 +184,7 @@ export default function Start() {
         <section style={{ paddingBottom: "100px" }}>
           <div className="container">
             <h2 style={{ fontSize: "50px" }} data-aos="zoom-in-up">
-              Whitelist Mint{" "}
-              <span className="red">
-                <NativeBalance />
-              </span>
+              Whitelist Mint <span className="red"></span>
             </h2>
             <a href="#" data-aos="zoom-in-up">
               <button className="btn">Go !</button>
@@ -304,9 +295,9 @@ export default function Start() {
               minted on Opensea but no only: You can see for art collection
               Here! Don't forget to connect your metamask.
             </p>
-            <Link to="/nftBalance">
+            {/* <Link to="/nftBalance">
               <button className="btn">Go see your NFT</button>
-            </Link>
+            </Link> */}
           </div>
         </div>
         <div
@@ -408,10 +399,7 @@ export default function Start() {
         </div>
       </div>
 
-      <div>
-        {" "}
-        <BurnCtr />
-      </div>
+      <div> </div>
 
       <footer>
         <div className="container">

@@ -1,17 +1,13 @@
-/* eslint-disable prettier/prettier */
 import { useEffect } from "react";
-import { useMoralis } from "react-moralis";
 import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Redirect,
+  Redirect
 } from "react-router-dom";
-import NFTBalance from "components/NFTBalance";
 import "antd/dist/antd.css";
 import "./style.css";
 import Start from "components/Start";
-import Ramper from "components/Ramper";
 
 // const styles = {
 //   content: {
@@ -48,14 +44,13 @@ const App = ({ isServerInfo }) => {
     isWeb3Enabled,
     enableWeb3,
     isAuthenticated,
-    isWeb3EnableLoading,
+    isWeb3EnableLoading
   } = useMoralis();
 
   useEffect(() => {
     const connectorId = window.localStorage.getItem("connectorId");
     if (isAuthenticated && !isWeb3Enabled && !isWeb3EnableLoading)
       enableWeb3({ provider: connectorId });
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isAuthenticated, isWeb3Enabled]);
 
   return (
@@ -75,24 +70,11 @@ const App = ({ isServerInfo }) => {
         <div>
           <Switch>
             <Route exact path="/start">
-              <Start isServerInfo={isServerInfo} />
-            </Route>
-            <Route path="/onramp">
-              <Ramper />
-            </Route>
-
-            <Route path="/nftBalance">
-              <NFTBalance />
+              <Start />
             </Route>
 
             <Route path="/">
               <Redirect to="/Start" />
-            </Route>
-            <Route path="/ethereum-boilerplate">
-              <Redirect to="/Start" />
-            </Route>
-            <Route path="/nonauthenticated">
-              <>Please login using the "Authenticate" button</>
             </Route>
           </Switch>
         </div>
