@@ -30,7 +30,7 @@ export default function Start() {
     parallax
       .to(".background", {
         scale: 1,
-        x: "-20vw"
+        x: "-20vw",
       })
 
       .to(
@@ -38,7 +38,7 @@ export default function Start() {
         {
           x: "0vw",
           y: "-60vh",
-          scale: 1.5
+          scale: 1.5,
         },
         "<"
       )
@@ -47,7 +47,7 @@ export default function Start() {
         ".tree",
         {
           scale: 1,
-          y: 0
+          y: 0,
         },
         "<"
       );
@@ -58,11 +58,11 @@ export default function Start() {
       start: "top 0",
       end: "bottom 0%",
       scrub: 2,
-      pin: true
+      pin: true,
     });
 
     titleAnim.to(".titleanim", {
-      scale: 2
+      scale: 2,
     });
 
     ScrollTrigger.create({
@@ -70,7 +70,7 @@ export default function Start() {
       trigger: ".parallax",
       start: "top 0",
       end: "bottom 0%",
-      scrub: 2
+      scrub: 2,
       // pin: true
     });
 
@@ -86,12 +86,12 @@ export default function Start() {
       trigger: ".hero",
       //start: 'bottom 0%',
       // end: 'bottom 0%',
-      scrub: true
+      scrub: true,
     });
 
     tl.from(".hero", {
       duration: 0.5,
-      filter: "blur(5px)"
+      filter: "blur(5px)",
     });
 
     // tl.from(".logo", {
@@ -116,11 +116,11 @@ export default function Start() {
 
     tl.from(".heroG .btn", {
       opacity: 0,
-      duration: 0.2
+      duration: 0.2,
     });
 
     tl.to(".loading", {
-      display: "none"
+      display: "none",
     });
 
     AOS.init();
