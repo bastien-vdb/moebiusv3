@@ -1,7 +1,4 @@
 /* eslint-disable prettier/prettier */
-import { Card, Timeline, Typography } from "antd";
-import React, { useMemo, useRef } from "react";
-import { useMoralis } from "react-moralis";
 import { gsap } from "gsap";
 import img5 from "./5.jpg";
 import img6 from "img/6.jpg";
@@ -11,7 +8,6 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import Account from "components/Account/Account";
-import nftBalance from "components/NFTBalance";
 import NativeBalance from "components/NativeBalance";
 import { Link } from "react-router-dom";
 
@@ -20,12 +16,12 @@ import capsule from "img/capsule.png";
 import tree from "img/tree.png";
 import BurnCtr from "./BurnCtr";
 
-export default function Start({ isServerInfo }) {
-  const { Moralis } = useMoralis();
+export default function Start() {
+  // const { Moralis } = useMoralis();
 
-  const isInchDex = useMemo(() => (Moralis.Plugins?.oneInch ? true : false), [
-    Moralis.Plugins?.oneInch,
-  ]);
+  // const isInchDex = useMemo(() => (Moralis.Plugins?.oneInch ? true : false), [
+  //   Moralis.Plugins?.oneInch,
+  // ]);
 
   gsap.registerPlugin(ScrollTrigger);
 
