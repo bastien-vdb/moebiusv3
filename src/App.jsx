@@ -7,18 +7,11 @@ import {
   Route,
   Redirect,
 } from "react-router-dom";
-import Account from "components/Account/Account";
-import Chains from "components/Chains";
 import NFTBalance from "components/NFTBalance";
-import { Layout, Tabs } from "antd";
 import "antd/dist/antd.css";
-import NativeBalance from "components/NativeBalance";
 import "./style.css";
 import Start from "components/Start";
-import Text from "antd/lib/typography/Text";
 import Ramper from "components/Ramper";
-import MenuItems from "./components/MenuItems";
-const { Header, Footer } = Layout;
 
 const styles = {
   content: {
@@ -51,8 +44,12 @@ const styles = {
   },
 };
 const App = ({ isServerInfo }) => {
-  const { isWeb3Enabled, enableWeb3, isAuthenticated, isWeb3EnableLoading } =
-    useMoralis();
+  const {
+    isWeb3Enabled,
+    enableWeb3,
+    isAuthenticated,
+    isWeb3EnableLoading,
+  } = useMoralis();
 
   useEffect(() => {
     const connectorId = window.localStorage.getItem("connectorId");

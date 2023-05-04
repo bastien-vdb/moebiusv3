@@ -23,10 +23,9 @@ import BurnCtr from "./BurnCtr";
 export default function Start({ isServerInfo }) {
   const { Moralis } = useMoralis();
 
-  const isInchDex = useMemo(
-    () => (Moralis.Plugins?.oneInch ? true : false),
-    [Moralis.Plugins?.oneInch],
-  );
+  const isInchDex = useMemo(() => (Moralis.Plugins?.oneInch ? true : false), [
+    Moralis.Plugins?.oneInch,
+  ]);
 
   gsap.registerPlugin(ScrollTrigger);
 
@@ -148,7 +147,7 @@ export default function Start({ isServerInfo }) {
         <section className="heroText">
           <h2>
             <strong>
-              <span>MOEBIUS </span>Collection{" "}
+              <span> MOEBIUS </span>Collection{" "}
             </strong>
             in NFTs WEB3
           </h2>
