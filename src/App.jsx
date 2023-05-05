@@ -3,7 +3,7 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Redirect
+  Redirect,
 } from "react-router-dom";
 import "antd/dist/antd.css";
 import "./style.css";
@@ -40,12 +40,8 @@ import Start from "components/Start";
 //   },
 // };
 const App = ({ isServerInfo }) => {
-  const {
-    isWeb3Enabled,
-    enableWeb3,
-    isAuthenticated,
-    isWeb3EnableLoading
-  } = useMoralis();
+  const { isWeb3Enabled, enableWeb3, isAuthenticated, isWeb3EnableLoading } =
+    useMoralis();
 
   useEffect(() => {
     const connectorId = window.localStorage.getItem("connectorId");
